@@ -39,7 +39,11 @@ public class Bookable {
             System.out.println("The number of available cars is " + carsAvailable.size() +" in the database now.");
         }
     }
-
+    public void print(){
+        for(Integer i : carsAvailable.keySet()){
+            System.out.println(i+" "+carsAvailable.get(i));
+        }
+    }
 
 
 

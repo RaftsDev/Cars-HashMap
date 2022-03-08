@@ -40,11 +40,13 @@ public class Reservation {
     }
 
     public void getTotalPrice() {  //Total price of tickets in the order list
-        float total = 0;
-        for(Integer i : this.customerList.keySet()){
-            total += this.customerList.get(i).getPrice();
+        if(this.customerList.size()!=0){
+            float total = 0;
+            for(Integer i : this.customerList.keySet()){
+                total += this.customerList.get(i).getPrice();
+            }
+            System.out.println("\nTotal price: "+total+"$");
         }
-        System.out.println("\nTotal price: "+total+"$");
     }
 
     public void print(){

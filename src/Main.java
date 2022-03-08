@@ -33,7 +33,7 @@ public class Main {
 
         System.out.println("\nType in required location:");
         String location = scan.nextLine().toLowerCase();
-        System.out.println("\nYou picked: "+location.toUpperCase()+":");
+        //System.out.println("\nYou picked: "+location.toUpperCase()+":");
         Reservation PinalList = new Reservation("Pinal's list");
         //String location = "Brooklyn, NY";
        /* if(orderList.carsAvailable.get(6).getPickUpLocation().equals(location) ){

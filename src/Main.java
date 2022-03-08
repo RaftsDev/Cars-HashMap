@@ -33,16 +33,21 @@ public class Main {
 
         System.out.println("\nType in required location:");
         String location = scan.nextLine().toLowerCase();
-        System.out.println("\nYou picked: "+location+":");
+        System.out.println("\nYou picked: "+location.toUpperCase()+":");
         Reservation PinalList = new Reservation("Pinal's list");
         //String location = "Brooklyn, NY";
        /* if(orderList.carsAvailable.get(6).getPickUpLocation().equals(location) ){
             System.out.println("Exist");
         }*/
+        boolean foundCar=false;
         for(Integer i : orderList.carsAvailable.keySet()){
             if(orderList.carsAvailable.get(i).getPickUpLocation().toLowerCase().equals(location)){
                 PinalList.addCarsToList(i, orderList.carsAvailable.get(i));
+                foundCar=true;
             }
+        }
+        if(!foundCar){
+            System.out.printf("There is no such a pick up location: \"%s\"",location);
         }
         //Print added lots
         PinalList.print();

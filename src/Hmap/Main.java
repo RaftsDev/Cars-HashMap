@@ -1,8 +1,13 @@
 package Hmap;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
+
+
+        Scanner scan = new Scanner(System.in); // For type in lot#
 
         AmericanWheels car1 = new AmericanWheels(10.00f, "Mazda3", "March,01,2022", "March,02,2022", "Los Angeles", "San Francisco, CA");
         AmericanWheels car2 = new AmericanWheels(15.00f, "Toyota Corolla", "March,02,2022", "March,05,2022", "San Francisco", "Los Angeles, CA");
@@ -25,8 +30,12 @@ public class Main {
         orderList.addCar(car8);
         orderList.addCar(car1);
 
+
+        System.out.println("Type in required location:");
+        String location = scan.nextLine();
+        System.out.println("You picked: "+location);
         Reservation PinalList = new Reservation("Pinal's list");
-        String location = "Brooklyn, NY";
+        //String location = "Brooklyn, NY";
         for(Integer i : orderList.carsAvailable.keySet()){
             if(orderList.carsAvailable.get(i).getPickUpLocation() == location){
                 PinalList.addCarsToList(i, orderList.carsAvailable.get(i));

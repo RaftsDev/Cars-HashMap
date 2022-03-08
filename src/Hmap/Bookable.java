@@ -24,8 +24,8 @@ public class Bookable {
 
             //Put car object in HashMap, increment key value
             this.carsAvailable.put(carsAvailable.size()+1, car);
-            System.out.println("You have added car: "+ car.getCompanyName() + "--"+car.getModel()+"-("+car.getSize()+")-Location: "+car.getPickUpLocation()+" pick up time:"+car.getPickUpDate()+" in the database.");
-            System.out.println("The number of available cars is " + this.carsAvailable.size() +" in the database now.");
+            //System.out.println("You have added car: "+ car.getCompanyName() + "--"+car.getModel()+"-("+car.getSize()+")-Location: "+car.getPickUpLocation()+" pick up time:"+car.getPickUpDate()+" in the database.");
+            //System.out.println("The number of available cars is " + this.carsAvailable.size() +" in the database now.");
 
     }
 
@@ -39,6 +39,8 @@ public class Bookable {
             System.out.println("The number of available cars is " + carsAvailable.size() +" in the database now.");
         }
     }
+
+
 
 
 

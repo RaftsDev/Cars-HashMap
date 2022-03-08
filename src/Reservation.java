@@ -47,13 +47,13 @@ public class Reservation {
     }
 
     public void print(){
-        System.out.println("\n------------------------------ ORDER LIST  -----------------------------------------------");
+        System.out.println("\n---------------------------------------------- Customer LIST  --------------------------------------------------------");
         for(Integer i : customerList.keySet()){
             Cars car=customerList.get(i);
             //System.out.println(i+":"+car.getModel()+" model of "+ car.getCompanyName()+ "company  in "+ car.getPickUpLocation()+" at "+car.getPickUpDate());
             //System.out.printf("\n|Lot#:%d|%s|%s(%s)|Location: %s|Pick up time:%s|", i,car.getCompanyName(),car.getModel(),car.getSize(),car.getPickUpLocation(),car.getPickUpDate());
-            System.out.printf("\n|Lot#:%2d| Company: %15s | %15s(%7s)|Location: %15s | Pick up:%15s|", i,car.getCompanyName(),car.getModel(),car.getSize(),car.getPickUpLocation(),car.getPickUpDate());
+            System.out.printf("\n|Lot#:%2d| Company: %15s | %15s(%7s) | Location: %15s | Pick up:%15s|", i,car.getCompanyName(),car.getModel(),car.getSize(),car.getPickUpLocation(),car.getPickUpDate());
         }
-        System.out.println("\n------------------------------------------------------------------------------------------");
+        System.out.println("\n----------------------------------------------------------------------------------------------------------------------");
     }
 }

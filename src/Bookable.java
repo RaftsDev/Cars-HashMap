@@ -37,13 +37,13 @@ public class Bookable {
         }
     }
     public void print(){
-        System.out.println("\n------------------------------ CARS FOR RENT -----------------------------------------------");
+        System.out.println("\n--------------------------------------------- CARS FOR RENT --------------------------------------------------------");
         for(Integer i : carsAvailable.keySet()){
             Cars car=carsAvailable.get(i);
             System.out.printf("\n|Lot#:%2d| Company: %15s | %15s(%7s) | Location: %15s | Pick up:%15s|", i,car.getCompanyName(),car.getModel(),car.getSize(),car.getPickUpLocation(),car.getPickUpDate());
             //System.out.printf(":"+car);
         }
-        System.out.println("\n--------------------------------------------------------------------------------------------");
+        System.out.println("\n--------------------------------------------------------------------------------------------------------------------");
     }
 
 

@@ -1,3 +1,4 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -31,7 +32,7 @@ public class Main {
         orderList.print();
 
         System.out.println("\nType in required location:");
-        String location = scan.nextLine();
+        String location = scan.nextLine().toLowerCase();
         System.out.println("\nYou picked: "+location+":");
         Reservation PinalList = new Reservation("Pinal's list");
         //String location = "Brooklyn, NY";
@@ -39,7 +40,7 @@ public class Main {
             System.out.println("Exist");
         }*/
         for(Integer i : orderList.carsAvailable.keySet()){
-            if(orderList.carsAvailable.get(i).getPickUpLocation().equals(location)){
+            if(orderList.carsAvailable.get(i).getPickUpLocation().toLowerCase().equals(location)){
                 PinalList.addCarsToList(i, orderList.carsAvailable.get(i));
             }
         }

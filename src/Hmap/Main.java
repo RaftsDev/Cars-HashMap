@@ -29,7 +29,7 @@ public class Main {
         String location = "Brooklyn, NY";
         for(Integer i : orderList.carsAvailable.keySet()){
             if(orderList.carsAvailable.get(i).getPickUpLocation() == location){
-                PinalList.addCarsToList(orderList.carsAvailable.get(i));
+                PinalList.addCarsToList(i, orderList.carsAvailable.get(i));
             }
         }
 

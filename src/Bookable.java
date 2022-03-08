@@ -40,6 +40,7 @@ public class Bookable {
         for(Integer i : carsAvailable.keySet()){
             Cars car=carsAvailable.get(i);
             System.out.println(i+":"+car.getCompanyName() + "--"+car.getModel()+"-("+car.getSize()+")-Location: "+car.getPickUpLocation()+" pick up time:"+car.getPickUpDate());
+            //System.out.printf(":"+car);
         }
     }
 

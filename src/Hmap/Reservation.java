@@ -1,5 +1,6 @@
 package Hmap;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -27,8 +28,8 @@ public class Reservation {
         else {
             customerList.put(lot, car);
         }
-        System.out.println("\nYou have added car: "+car.getModel()+" model of "+ car.getCompanyName()+ "company  in "+ car.getPickUpLocation()+" at "+car.getPickUpDate()+" in your list.");
-        System.out.printf("Your total price for the cars to book is: %.2f", this.getTotalPrice());
+        //System.out.println("\nYou have added car: "+car.getModel()+" model of "+ car.getCompanyName()+ "company  in "+ car.getPickUpLocation()+" at "+car.getPickUpDate()+" in your list.");
+        //System.out.printf("Your total price for the cars to book is: %.2f", this.getTotalPrice());
     }
 
     public void removeCarFromList(Integer lot, Cars car) { //remove ticket from order list
@@ -37,15 +38,22 @@ public class Reservation {
         } else {
             customerList.remove(lot);
             System.out.println("You have removed car "+car.getModel()+" model of "+ car.getCompanyName()+ "company  in "+ car.getPickUpLocation()+" at "+car.getPickUpDate()+" doesnt exist in your list" + " from your list.");
-            System.out.printf("Your total price for the cars to book is: %.2f", this.getTotalPrice());
+            //System.out.printf("Your total price for the cars to book is: %.2f", this.getTotalPrice());
         }
     }
 
-    public float getTotalPrice() {  //Total price of tickets in the order list
+    public void getTotalPrice() {  //Total price of tickets in the order list
         float total = 0;
-        for(Integer i : customerList.keySet()){
-            total += customerList.get(i).getPrice();
+        for(Integer i : this.customerList.keySet()){
+            total += this.customerList.get(i).getPrice();
         }
-        return total;
+        System.out.println("\nTotal price: "+total+"$");
+    }
+
+    public void print(){
+        for(Integer i : customerList.keySet()){
+            Cars car=customerList.get(i);
+            System.out.println(i+":"+car.getModel()+" model of "+ car.getCompanyName()+ "company  in "+ car.getPickUpLocation()+" at "+car.getPickUpDate());
+        }
     }
 }

@@ -45,6 +45,9 @@ public class Main {
                 PinalList.addCarsToList(i, orderList.carsAvailable.get(i));
             }
         }
+        //Print added lots
+        PinalList.print();
+        PinalList.getTotalPrice();
 
     }
 }

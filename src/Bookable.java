@@ -39,7 +39,7 @@ public class Bookable {
     public void print(){
         for(Integer i : carsAvailable.keySet()){
             Cars car=carsAvailable.get(i);
-            System.out.println(i+":"+car.getCompanyName() + "--"+car.getModel()+"-("+car.getSize()+")-Location: "+car.getPickUpLocation()+" pick up time:"+car.getPickUpDate());
+            System.out.printf("\n|%d|%s|%s(%s)|Location: %s|Pick up time:%s|", i,car.getCompanyName(),car.getModel(),car.getSize(),car.getPickUpLocation(),car.getPickUpDate());
             //System.out.printf(":"+car);
         }
     }

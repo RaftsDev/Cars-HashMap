@@ -3,11 +3,11 @@ import java.util.Map;
 
 // Class of available tickets of airlines
 
-public class Bookable {
+public class Bookable <T extends Cars> {
     private String name;
     //public ArrayList<Cars> carsAvailable = new ArrayList<>();
 
-    public Map<Integer, Cars> carsAvailable=new HashMap<Integer,Cars>();
+    public Map<Integer, T> carsAvailable=new HashMap<Integer,T>();
 
     public Bookable(String name) {
         this.name = name;

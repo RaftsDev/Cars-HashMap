@@ -3,11 +3,11 @@ import java.util.Locale;
 import java.util.Map;
 
 // Class of implementation customer list
-public class Reservation {
+public class Reservation <T extends Cars> {
     private String name; //customer name
 
     //Collection - customer order list of tickets
-    private Map<Integer, Cars> customerList = new HashMap<Integer, Cars>();
+    private Map<Integer, T  > customerList = new HashMap<Integer, T >();
 
     public Reservation(String name) {
         this.name = name;

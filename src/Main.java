@@ -1,6 +1,11 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
+
+
+        Scanner scan = new Scanner(System.in); // For type in lot#
 
         AmericanWheels car1 = new AmericanWheels(10.00f, "Mazda3", "March,01,2022", "March,02,2022", "Los Angeles", "San Francisco, CA");
         AmericanWheels car2 = new AmericanWheels(15.00f, "Toyota Corolla", "March,02,2022", "March,05,2022", "San Francisco", "Los Angeles, CA");
@@ -23,13 +28,24 @@ public class Main {
         orderList.addCar(car8);
         orderList.addCar(car1);
 
+        orderList.print();
+
+        System.out.println("\nType in required location:");
+        String location = scan.nextLine();
+        System.out.println("\nYou picked: "+location+":");
         Reservation PinalList = new Reservation("Pinal's list");
-        String location = "Brooklyn, NY";
-        for(Cars i : orderList.carsAvailable){
-            if(i.getPickUpLocation() == location){
-                PinalList.addCarsToList(i);
+        //String location = "Brooklyn, NY";
+       /* if(orderList.carsAvailable.get(6).getPickUpLocation().equals(location) ){
+            System.out.println("Exist");
+        }*/
+        for(Integer i : orderList.carsAvailable.keySet()){
+            if(orderList.carsAvailable.get(i).getPickUpLocation().equals(location)){
+                PinalList.addCarsToList(i, orderList.carsAvailable.get(i));
             }
         }
+        //Print added lots
+        PinalList.print();
+        PinalList.getTotalPrice();
 
     }
 }

@@ -30,14 +30,18 @@ public class Main {
         orderList.addCar(car8);
         orderList.addCar(car1);
 
+        orderList.print();
 
-        System.out.println("Type in required location:");
+        System.out.println("\nType in required location:");
         String location = scan.nextLine();
-        System.out.println("You picked: "+location);
+        System.out.println("\nYou picked: "+location+":");
         Reservation PinalList = new Reservation("Pinal's list");
         //String location = "Brooklyn, NY";
+       /* if(orderList.carsAvailable.get(6).getPickUpLocation().equals(location) ){
+            System.out.println("Exist");
+        }*/
         for(Integer i : orderList.carsAvailable.keySet()){
-            if(orderList.carsAvailable.get(i).getPickUpLocation() == location){
+            if(orderList.carsAvailable.get(i).getPickUpLocation().equals(location)){
                 PinalList.addCarsToList(i, orderList.carsAvailable.get(i));
             }
         }

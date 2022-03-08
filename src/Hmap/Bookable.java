@@ -41,7 +41,8 @@ public class Bookable {
     }
     public void print(){
         for(Integer i : carsAvailable.keySet()){
-            System.out.println(i+" "+carsAvailable.get(i));
+            Cars car=carsAvailable.get(i);
+            System.out.println(i+":"+car.getCompanyName() + "--"+car.getModel()+"-("+car.getSize()+")-Location: "+car.getPickUpLocation()+" pick up time:"+car.getPickUpDate());
         }
     }
 

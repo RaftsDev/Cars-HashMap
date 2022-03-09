@@ -17,23 +17,23 @@ public class Reservation {
         return name;
     }
 
-    public void addCarsToList(Integer lot, Cars car) {
-        if(customerList.containsKey(lot)) {
+    public void addCarsToList(Cars car) {
+        if(customerList.containsKey(car.getLot())) {
             //Change seat property to car object in Database and add to customer list
             System.out.println("This car is already in your list");
         }
         else {
-            customerList.put(lot, car);
+            customerList.put(car.getLot(), car);
         }
         //System.out.println("\nYou have added car: "+car.getModel()+" model of "+ car.getCompanyName()+ "company  in "+ car.getPickUpLocation()+" at "+car.getPickUpDate()+" in your list.");
         //System.out.printf("Your total price for the cars to book is: %.2f", this.getTotalPrice());
     }
 
-    public void removeCarFromList(Integer lot, Cars car) { //remove ticket from order list
-        if (!customerList.containsKey(lot)) {
+    public void removeCarFromList(Cars car) { //remove ticket from order list
+        if (!customerList.containsKey(car.getLot())) {
             System.out.println("Car "+car.getModel()+" model of "+ car.getCompanyName()+ "company  in "+ car.getPickUpLocation()+" at "+car.getPickUpDate()+" doesnt exist in your list");
         } else {
-            customerList.remove(lot);
+            customerList.remove(car.getLot());
             System.out.println("You have removed car "+car.getModel()+" model of "+ car.getCompanyName()+ "company  in "+ car.getPickUpLocation()+" at "+car.getPickUpDate()+" doesnt exist in your list" + " from your list.");
             //System.out.printf("Your total price for the cars to book is: %.2f", this.getTotalPrice());
         }
@@ -58,7 +58,7 @@ public class Reservation {
                 Cars car=customerList.get(i);
                 //System.out.println(i+":"+car.getModel()+" model of "+ car.getCompanyName()+ "company  in "+ car.getPickUpLocation()+" at "+car.getPickUpDate());
                 //System.out.printf("\n|Lot#:%d|%s|%s(%s)|Location: %s|Pick up time:%s|", i,car.getCompanyName(),car.getModel(),car.getSize(),car.getPickUpLocation(),car.getPickUpDate());
-                System.out.printf("\n|Lot#:%2d| Company: %15s | %15s(%7s) | Location: %15s | Pick up:%15s|", i,car.getCompanyName(),car.getModel(),car.getSize(),car.getPickUpLocation().toUpperCase(),car.getPickUpDate());
+                System.out.printf("\n|Lot#:%2d| Company: %15s | %15s(%7s) | Location: %15s | Pick up:%15s|", car.getLot(),car.getCompanyName(),car.getModel(),car.getSize(),car.getPickUpLocation().toUpperCase(),car.getPickUpDate());
             }
             System.out.println("\n----------------------------------------------------------------------------------------------------------------------");
         }

@@ -1,4 +1,5 @@
 public abstract class Cars {
+    private Integer lot;
     public String companyName;
     private float price;
     private String model;
@@ -8,8 +9,13 @@ public abstract class Cars {
     private String pickUpLocation;
     private String DropOffLocation;
 
+    private static int counter;
+
+
     public Cars(float price, String model, String pickUpDate, String dropOffDate, String pickUpLocation, String DropOffLocation) {
        // this.companyName = companyName;
+        counter++;
+        this.lot = counter;
         this.price = price;
         this.model = model;
         if ((model == "Mazda3") || (model=="Toyota Corola") || (model=="Hyundai Elantra")){
@@ -23,6 +29,10 @@ public abstract class Cars {
         this.dropOffDate = dropOffDate;
         this.pickUpLocation = pickUpLocation;
         this.DropOffLocation = DropOffLocation;
+    }
+
+    public int getLot() {
+        return lot;
     }
 
     public String getCompanyName() {

@@ -42,7 +42,7 @@ public class Main {
         boolean foundCar=false;
         for(Integer i : orderList.carsAvailable.keySet()){
             if(orderList.carsAvailable.get(i).getPickUpLocation().toLowerCase().equals(location)){
-                PinalList.addCarsToList(i, orderList.carsAvailable.get(i));
+                PinalList.addCarsToList(orderList.carsAvailable.get(i));
                 foundCar=true;
             }
         }
